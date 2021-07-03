@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58224717-1607-4C89-BD1C-EB96A1D263A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PictureInText</RootNamespace>
+    <AssemblyName>PictureInText</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="asprise-ocr-api, Version=15.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\asprise-ocr-api.15.3.1.0\lib\net40\asprise-ocr-api.dll</HintPath>
+    </Reference>
+    <Reference Include="asprise-ocr-dll-bundle-32, Version=15.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\asprise-ocr-dll-bundle-32.15.3.1.0\lib\net40\asprise-ocr-dll-bundle-32.dll</HintPath>
+    </Reference>
+    <Reference Include="asprise-ocr-dll-bundle-64, Version=15.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\asprise-ocr-dll-bundle-64.15.3.1.0\lib\net40\asprise-ocr-dll-bundle-64.dll</HintPath>
+    </Reference>
+    <Reference Include="IronOcr, Version=2021.2.1.0, Culture=neutral, PublicKeyToken=c2cbcea5ea3f6d8d, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronOcr.2021.2.1\lib\net40\IronOcr.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vintasoft.Imaging, Version=10.0.13.1, Culture=neutral, PublicKeyToken=e553c7d3e075f61c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vintasoft.Imaging.10.0.13.1\lib\net452\Vintasoft.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Ocr, Version=5.0.13.1, Culture=neutral, PublicKeyToken=e553c7d3e075f61c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vintasoft.Imaging.Ocr.5.0.13.1\lib\net452\Vintasoft.Imaging.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Ocr.Tesseract, Version=5.0.13.1, Culture=neutral, PublicKeyToken=e553c7d3e075f61c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vintasoft.Imaging.Ocr.Tesseract.5.0.13.1\lib\net452\Vintasoft.Imaging.Ocr.Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Shared, Version=2.0.2.3, Culture=neutral, PublicKeyToken=e553c7d3e075f61c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vintasoft.Shared.2.0.2.3\lib\net452\Vintasoft.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OcrSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OcrSampleForm.Designer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OcrSampleForm.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\AnylineResources.bundle\Anyline-Info.plist" />
+    <None Include="Resources\AnylineResources.bundle\images\anyline_logo_white.dat" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid_any.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line_any.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\config_files\availableManufacturer.md" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner_vertical.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\cow_tag_scanner.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\tin.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\comb_rw_10Lite.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\crnn_baseline_v2_ds6e1.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\crnn_horizontal_container_48x280x3_3.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\crnn_vertical_containers_48x600x3_hue_2.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\vin_crnn_net2.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN_detection_char_remote.any" />
+    <None Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_barcode\ean.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_barcode\ean_advanced.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_document\document.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model_3_25.any" />
+    <None Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model_3_27.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\analog_meter.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\brightness.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\dial_meter.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\digital_heat_meter.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\digital_meter.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\digital_meter_multifields.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\energy_serial.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\crnn_auto_synth.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\crnn_energy_digital_hex_small.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\det_auto_hex.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\det_auto_synth.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\f16_model_classifier.any" />
+    <None Include="Resources\AnylineResources.bundle\module_energy\trained_models\f16_model_detector.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license_belgium.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license_netherlands.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\anyline_german_id_front.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\auto_mode_standalone.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\card_detection_function_test.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\ID_default_start_variables.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-ACT11.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-NSW12.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-NT06.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-QLD19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-SA13.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-VIC09.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUS-FO-WAXX.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUT-BO-02003_02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUT-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\AUT-FO-05002_05001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\BEL-BO-09003_09002_09001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\BEL-FO-02003_02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\BEL-FO-05001_04003_04002_04001_03001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CAN-FO-AB19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CAN-FO-BC19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CAN-FO-ON19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CAN-FO-QC19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CHE-BO-01003_01002_01001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CHE-FO-02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CZE-BO-04002_04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\CZE-FO-02003_02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\DEU-BO-02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\DEU-FO-02006_02003_02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\DEU-FO-02007.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\DEU-HI-01f.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\DNK-FO-03001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\DNK-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ESP-BO-05001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ESP-FO-04002.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ESP-HI-01f.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\EST-BO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\EST-FO-02004.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\FIN-BO-09001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\FIN-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\FRA-BO-02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\FRA-FO-07001_06001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\FRA-HI-01f.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\GBR-FO-07001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\GBR-FO-09002_09001_08002_08001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\GBR-HI-01f.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\HRV-BO-03002_03001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\HRV-FO-02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\HUN-BO-05004_05003_05002_05001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\HUN-FO-02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\IRL-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ITA-BO-04004.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ITA-FO-06001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ITA-HI-01f.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\LTU-BO-02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\LTU-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\LUX-BO-02005.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\LUX-FO-01010.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\LVA-BO-01001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\LVA-FO-01003.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\MDA-BO-02002_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\MEX-BO-C.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\MEX-BO-E.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\MEX-BO-G.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NLD-BO-05001_04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NLD-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NLD-FO-05001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NLD-FO-06001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NOR-BO-01002.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NOR-FO-07001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\NZL-FO-14.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\POL-BO-03001_02003_02002.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\POL-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\PRT-BO-03005_03004_03003_03002_03001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\PRT-BO-03005_03004_03003_03002_03001_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\PRT-FO-06001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ROU-BO-03001_02002_02001_01002.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\ROU-FO-06001_05001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SVK-BO-05002_05001_04001_03001_02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SVK-FO-04001_03001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SVN-BO-02001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SVN-FO-04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SWE-BO-03001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SWE-FO-05001_04001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SWE-FO-06001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\SWE-FO-07001.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-AK_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-AL_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-AR_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-AZ_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-CA_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-CT_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-DC_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-DE_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-FL_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-IL_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-MA_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-MI_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-NC_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-NJ_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-NY_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-OH_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-PA_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-RI_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\US-TX_NID_O_R301_F.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-AK19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-AL19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-AR19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-AZ19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-CA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-CO19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-CT19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-CT19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-DC19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-DE19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-FL19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-FL19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-GA20.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-HI19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-IA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-IA19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-ID19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-IL19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-IN19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-KS19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-KY19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-LA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MD19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-ME19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MI19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MI19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MN19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MO19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MO19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MS19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-MT19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NC19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-ND19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NE19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NH19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NJ19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NM19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NV19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NV19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-NY19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-OH19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-OK19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-OR19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-PA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-PA19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-RI19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-RI19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-SC19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-SD19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-TN19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-TN19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-TX19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-UT19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-UT19_v2.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-VA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-VT19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-WA19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-WI19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-WV19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\config_files\templates\USA-FO-WY19.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_anonymize_id.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_auto_mode.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_card_detection.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_card_rectification.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_common.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_field_detection.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_mrz_scanning.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_square_from_edges.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_template.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\functions_template_scanning.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\main_id_scanner.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\mrz_scanning.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\template_scanning_standalone.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\crnnID_quant.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_AT.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\IDDe.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\IDDeSticker.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\OCRb.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\plink4_idd_textblock_vgg_small_v2.any" />
+    <None Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any" />
+    <None Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_us.ale" />
+    <None Include="Resources\AnylineResources.bundle\module_license_plate\trained_models\LPT.any" />
+    <None Include="Resources\AnylineResources.bundle\module_license_plate\trained_models\US_LPT_CRNN_v5g.any" />
+    <None Include="Resources\AnylineResources.bundle\module_license_plate\trained_models\US_LPT_Detector.any" />
+    <None Include="Resources\AnylineResources.bundle\module_license_plate\trained_models\US_LPT_StateCLF_v4_ex.any" />
+    <None Include="Resources\AnylineResources.bundle\subscript_function_list.md" />
+    <None Include="Resources\AnylineResources.bundle\threshold_all.ale" />
+    <None Include="Resources\AnylineResources.bundle\ui\asset-manifest.json" />
+    <None Include="Resources\AnylineResources.bundle\ui\manifest.json" />
+    <None Include="Resources\AnylineResources.bundle\ui_2_0\asset-manifest.json" />
+    <None Include="Resources\AnylineResources.bundle\ui_2_0\manifest.json" />
+    <None Include="TesseractOCR\tessdata\eng.traineddata" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe-AspriseOCR.txt" />
+    <Content Include="Resources\AnylineResources.bundle\images\flash_white%402x.png" />
+    <Content Include="Resources\AnylineResources.bundle\images\flash_white%403x.png" />
+    <Content Include="Resources\AnylineResources.bundle\images\flash_white.png" />
+    <Content Include="Resources\AnylineResources.bundle\module_anyline_ocr\config_files\continental.txt" />
+    <Content Include="Resources\AnylineResources.bundle\module_anyline_ocr\config_files\cooper.txt" />
+    <Content Include="Resources\AnylineResources.bundle\module_anyline_ocr\config_files\giti.txt" />
+    <Content Include="Resources\AnylineResources.bundle\module_anyline_ocr\config_files\goodyear.txt" />
+    <Content Include="Resources\AnylineResources.bundle\module_anyline_ocr\config_files\michelin.txt" />
+    <Content Include="Resources\AnylineResources.bundle\sounds\beep.wav" />
+    <Content Include="Resources\AnylineResources.bundle\ui\favicon.ico" />
+    <Content Include="Resources\AnylineResources.bundle\ui\index.html" />
+    <Content Include="Resources\AnylineResources.bundle\ui\precache-manifest.ce26756c8a59c9a79b352ead99228ad1.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\service-worker.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\css\main.aad3df20.chunk.css" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\css\main.chunk.css" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\1.42b14459.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\2.8b8e9591.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\2.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\3.10897e3c.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\main.21e52887.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\main.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\runtime~main.141b28a8.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\js\runtime~main.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui\static\media\anyIcon.ebceaedb.svg" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\favicon.ico" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\index.html" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\static\css\main.chunk.css" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\static\js\2.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\static\js\main.chunk.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\static\js\runtime-main.js" />
+    <Content Include="Resources\AnylineResources.bundle\ui_2_0\static\media\anyIcon.ebceaedb.svg" />
+    <Content Include="TesseractOCR\Tesseract4.Vintasoft.x64.dll" />
+    <Content Include="TesseractOCR\Tesseract4.Vintasoft.x86.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Anyline.Xamarin.SDK.iOS.30.1.0\build\Anyline.Xamarin.SDK.iOS.targets" Condition="Exists('..\packages\Anyline.Xamarin.SDK.iOS.30.1.0\build\Anyline.Xamarin.SDK.iOS.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Anyline.Xamarin.SDK.iOS.30.1.0\build\Anyline.Xamarin.SDK.iOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Anyline.Xamarin.SDK.iOS.30.1.0\build\Anyline.Xamarin.SDK.iOS.targets'))" />
+  </Target>
+</Project>
